@@ -5,7 +5,7 @@ object Form1: TForm1
   BorderStyle = bsSingle
   Caption = 'Forms transplantation tool'
   ClientHeight = 380
-  ClientWidth = 572
+  ClientWidth = 505
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -17,7 +17,7 @@ object Form1: TForm1
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   DesignSize = (
-    572
+    505
     380)
   PixelsPerInch = 96
   TextHeight = 13
@@ -60,40 +60,13 @@ object Form1: TForm1
       TabOrder = 2
     end
   end
-  object Button1: TButton
-    Left = 216
-    Top = 99
-    Width = 75
-    Height = 25
-    Caption = 'Download'
-    TabOrder = 1
-    OnClick = Button1Click
-  end
-  object Button2: TButton
-    Left = 481
-    Top = 27
-    Width = 75
-    Height = 25
-    Caption = 'Upload'
-    TabOrder = 2
-    OnClick = Button2Click
-  end
-  object Button3: TButton
-    Left = 435
-    Top = 179
-    Width = 129
-    Height = 25
-    Caption = 'Sanitize XML'
-    TabOrder = 3
-    OnClick = Button3Click
-  end
   object GroupBox2: TGroupBox
     Left = 8
     Top = 8
     Width = 113
     Height = 55
     Caption = 'Settings'
-    TabOrder = 4
+    TabOrder = 1
     object Button5: TButton
       Left = 59
       Top = 19
@@ -113,48 +86,123 @@ object Form1: TForm1
       OnClick = Button4Click
     end
   end
-  object LabeledEdit4: TLabeledEdit
-    Left = 216
-    Top = 30
-    Width = 121
-    Height = 21
-    EditLabel.Width = 45
-    EditLabel.Height = 13
-    EditLabel.Caption = 'Workflow'
-    TabOrder = 5
-  end
-  object LabeledEdit5: TLabeledEdit
-    Left = 216
-    Top = 72
-    Width = 121
-    Height = 21
-    EditLabel.Width = 64
-    EditLabel.Height = 13
-    EditLabel.Caption = 'Content type'
-    Enabled = False
-    TabOrder = 6
-    Visible = False
-  end
   object Memo1: TMemo
     Left = 8
     Top = 228
-    Width = 555
+    Width = 488
     Height = 144
     Anchors = [akLeft, akTop, akRight, akBottom]
     Lines.Strings = (
       '[ LOG ]')
-    TabOrder = 7
+    TabOrder = 2
+    ExplicitWidth = 555
+  end
+  object PageControl1: TPageControl
+    Left = 191
+    Top = 16
+    Width = 218
+    Height = 194
+    ActivePage = TabSheet1
+    TabOrder = 3
+    object TabSheet1: TTabSheet
+      Caption = '1. Download'
+      ExplicitLeft = 12
+      ExplicitTop = 39
+      ExplicitWidth = 351
+      ExplicitHeight = 324
+      object LabeledEdit4: TLabeledEdit
+        Left = 20
+        Top = 37
+        Width = 173
+        Height = 21
+        EditLabel.Width = 45
+        EditLabel.Height = 13
+        EditLabel.Caption = 'Workflow'
+        TabOrder = 0
+      end
+      object LabeledEdit5: TLabeledEdit
+        Left = 20
+        Top = 82
+        Width = 173
+        Height = 21
+        EditLabel.Width = 64
+        EditLabel.Height = 13
+        EditLabel.Caption = 'Content type'
+        Enabled = False
+        TabOrder = 1
+        Visible = False
+      end
+      object Button1: TButton
+        Left = 20
+        Top = 123
+        Width = 173
+        Height = 25
+        Caption = 'Download'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 2
+        OnClick = Button1Click
+      end
+    end
+    object TabSheet2: TTabSheet
+      Caption = '2. Sanitize'
+      ImageIndex = 1
+      ExplicitTop = 18
+      ExplicitWidth = 281
+      ExplicitHeight = 165
+      object Button3: TButton
+        Left = 16
+        Top = 75
+        Width = 177
+        Height = 25
+        Caption = 'Sanitize XML'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 0
+        OnClick = Button3Click
+      end
+    end
+    object TabSheet3: TTabSheet
+      Caption = '3. Upload'
+      ImageIndex = 2
+      ExplicitLeft = 0
+      ExplicitWidth = 351
+      ExplicitHeight = 324
+      object Button2: TButton
+        Left = 16
+        Top = 77
+        Width = 177
+        Height = 25
+        Caption = 'Upload'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 0
+        OnClick = Button2Click
+      end
+    end
   end
   object SaveDialog: TSaveDialog
     DefaultExt = '*.xml'
     Filter = 'XML|*.xml'
-    Left = 168
+    Left = 432
     Top = 8
   end
   object OpenDialog: TOpenDialog
     DefaultExt = '*.xml'
     Filter = 'XML|*.xml'
-    Left = 168
+    Left = 432
     Top = 56
   end
   object NetHTTPClient: TNetHTTPClient
@@ -164,8 +212,8 @@ object Form1: TForm1
     AllowCookies = True
     HandleRedirects = True
     UserAgent = 'Embarcadero URI Client/1.0'
-    Left = 488
-    Top = 88
+    Left = 432
+    Top = 112
   end
   object NetHTTPRequest: TNetHTTPRequest
     Asynchronous = False
@@ -174,7 +222,7 @@ object Form1: TForm1
     Client = NetHTTPClient
     OnRequestCompleted = NetHTTPRequestRequestCompleted
     OnRequestError = NetHTTPRequestRequestError
-    Left = 376
-    Top = 88
+    Left = 432
+    Top = 160
   end
 end

@@ -6,7 +6,8 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   QPP.REST.URLBuilder,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls,
-  System.Net.URLClient, System.Net.HttpClient, System.Net.HttpClientComponent;
+  System.Net.URLClient, System.Net.HttpClient, System.Net.HttpClientComponent,
+  Vcl.ComCtrls;
 
 type
   TForm1 = class(TForm)
@@ -14,9 +15,6 @@ type
     LabeledEdit1: TLabeledEdit;
     LabeledEdit2: TLabeledEdit;
     LabeledEdit3: TLabeledEdit;
-    Button1: TButton;
-    Button2: TButton;
-    Button3: TButton;
     SaveDialog: TSaveDialog;
     OpenDialog: TOpenDialog;
     NetHTTPClient: TNetHTTPClient;
@@ -24,9 +22,16 @@ type
     GroupBox2: TGroupBox;
     Button5: TButton;
     Button4: TButton;
+    Memo1: TMemo;
+    PageControl1: TPageControl;
+    TabSheet1: TTabSheet;
+    TabSheet2: TTabSheet;
+    TabSheet3: TTabSheet;
     LabeledEdit4: TLabeledEdit;
     LabeledEdit5: TLabeledEdit;
-    Memo1: TMemo;
+    Button1: TButton;
+    Button3: TButton;
+    Button2: TButton;
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure Button1Click(Sender: TObject);
